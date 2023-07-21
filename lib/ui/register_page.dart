@@ -10,6 +10,7 @@ class RegisterPage extends StatefulWidget {
 }
 
 class _RegisterPageState extends State<RegisterPage> {
+  bool check = true;
   @override
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
@@ -44,7 +45,7 @@ class _RegisterPageState extends State<RegisterPage> {
                   Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                      const Text('Non hai ancora un account?'),
+                      const Text('Hai già un account?'),
                       TextButton(
                         onPressed: () {},
                         child: const Text(
@@ -89,6 +90,4 @@ class _RegisterPageState extends State<RegisterPage> {
       ),
     );
   }
-
-  bool check = true;
 }
