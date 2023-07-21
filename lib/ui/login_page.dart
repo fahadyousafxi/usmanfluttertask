@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:usmanfluttertask/widgets/big_button.dart';
 import 'package:usmanfluttertask/widgets/custom_text_field.dart';
+import 'package:usmanfluttertask/widgets/social_login_button.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -11,22 +13,57 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   @override
   Widget build(BuildContext context) {
+    var size = MediaQuery.of(context).size;
     return Scaffold(
-      body: Center(
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 25),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.asset(
-                'assets/logo-to-use.png',
-                height: 80,
-              ),
-              const CustomTextField(label: 'Email'),
-              const CustomTextField(label: 'Password'),
-            ],
+      body: SafeArea(
+        child: Center(
+          child: Padding(
+            padding: EdgeInsets.symmetric(horizontal: 25),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Image.asset(
+                  'assets/logo-to-use.png',
+                  height: 80,
+                ),
+                SizedBox(height: size.height / 10),
+                const CustomTextField(label: 'Email'),
+                const SizedBox(height: 15),
+                const CustomTextField(
+                  label: 'Password',
+                  obscureText: true,
+                  icon: Icon(Icons.remove_red_eye_outlined),
+                ),
+                const SizedBox(height: 15),
+                const Row(
+                  children: [
+                    SocialLogInButton(image: 'assets/apple.png', txt: 'Apple'),
+                    SizedBox(width: 15),
+                    SocialLogInButton(
+                        image: 'assets/google.png', txt: 'Google'),
+                  ],
+                ),
+                const SizedBox(height: 5),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    const Text('Non hai ancora un account?'),
+                    TextButton(
+                      onPressed: () {},
+                      child: const Text(
+                        'Registrati',
+                        style: TextStyle(color: Colors.blue),
+                      ),
+                    )
+                  ],
+                )
+              ],
+            ),
           ),
         ),
+      ),
+      bottomNavigationBar: const BigButton(
+        txt: 'Login',
       ),
     );
   }
