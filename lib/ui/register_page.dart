@@ -53,16 +53,42 @@ class _RegisterPageState extends State<RegisterPage> {
                         ),
                       )
                     ],
-                  )
+                  ),
                 ],
               ),
             ),
           ),
         ),
       ),
-      bottomNavigationBar: const BigButton(
-        txt: 'Registrati',
+      bottomNavigationBar: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              TextButton(
+                onPressed: () {},
+                child: const Text(
+                  'eccetto termini e condizioni',
+                  style: TextStyle(color: Colors.blue),
+                ),
+              ),
+              Checkbox(
+                  value: check,
+                  onChanged: (value) {
+                    setState(() {
+                      check = value!;
+                    });
+                  })
+            ],
+          ),
+          const BigButton(
+            txt: 'Registrati',
+          ),
+        ],
       ),
     );
   }
+
+  bool check = true;
 }
