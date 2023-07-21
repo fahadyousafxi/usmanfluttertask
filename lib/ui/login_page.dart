@@ -73,7 +73,7 @@ class _LoginPageState extends State<LoginPage> {
       bottomNavigationBar: BigButton(
         txt: 'Login',
         onTap: () {
-          Get.to(const SaveItemsPage());
+          Get.offAll(const SaveItemsPage());
         },
       ),
     );
