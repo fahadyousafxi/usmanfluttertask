@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 
 class BigButton extends StatelessWidget {
+  final VoidCallback? onTap;
   final String? txt;
-  const BigButton({super.key, required this.txt});
+  const BigButton({super.key, required this.txt, required this.onTap});
 
   @override
   Widget build(BuildContext context) {
@@ -11,7 +12,7 @@ class BigButton extends StatelessWidget {
       child: SafeArea(
         child: Material(
           child: InkWell(
-            onTap: () {},
+            onTap: onTap,
             child: Container(
               height: 60,
               decoration: BoxDecoration(

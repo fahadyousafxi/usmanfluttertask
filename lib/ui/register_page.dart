@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:usmanfluttertask/ui/login_page.dart';
 import 'package:usmanfluttertask/widgets/big_button.dart';
 import 'package:usmanfluttertask/widgets/custom_text_field.dart';
 
@@ -47,7 +49,9 @@ class _RegisterPageState extends State<RegisterPage> {
                     children: [
                       const Text('Hai già un account?'),
                       TextButton(
-                        onPressed: () {},
+                        onPressed: () {
+                          Get.to(const LoginPage());
+                        },
                         child: const Text(
                           'Login',
                           style: TextStyle(color: Colors.blue),
@@ -83,8 +87,11 @@ class _RegisterPageState extends State<RegisterPage> {
                   })
             ],
           ),
-          const BigButton(
+          BigButton(
             txt: 'Registrati',
+            onTap: () {
+              Get.to(const LoginPage());
+            },
           ),
         ],
       ),

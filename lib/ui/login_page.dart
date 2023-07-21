@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:usmanfluttertask/ui/register_page.dart';
+import 'package:usmanfluttertask/ui/save_itesms_page.dart';
 import 'package:usmanfluttertask/widgets/big_button.dart';
 import 'package:usmanfluttertask/widgets/custom_text_field.dart';
 import 'package:usmanfluttertask/widgets/social_login_button.dart';
@@ -69,8 +70,11 @@ class _LoginPageState extends State<LoginPage> {
           ),
         ),
       ),
-      bottomNavigationBar: const BigButton(
+      bottomNavigationBar: BigButton(
         txt: 'Login',
+        onTap: () {
+          Get.to(const SaveItemsPage());
+        },
       ),
     );
   }
