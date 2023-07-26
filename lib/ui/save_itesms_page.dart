@@ -23,7 +23,7 @@ class _SaveItemsPageState extends State<SaveItemsPage> {
         itemCount: SaveItemsModel().images.length,
         itemBuilder: (BuildContext context, int index) {
           return Padding(
-            padding: EdgeInsets.only(left: 15, top: 18),
+            padding: const EdgeInsets.only(left: 15, top: 18),
             child: Row(
               children: [
                 Image.asset(
@@ -45,7 +45,7 @@ class _SaveItemsPageState extends State<SaveItemsPage> {
                       ),
                       Text(
                         SaveItemsModel().locations[index],
-                        style: TextStyle(
+                        style: const TextStyle(
                             fontWeight: FontWeight.bold, color: Colors.grey),
                       ),
                       Text(
