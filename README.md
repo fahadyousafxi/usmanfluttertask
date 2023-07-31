@@ -1,7 +1,7 @@
 ## usmanfluttertask
 
 testing project
-A new Flutter testing project.
+A new Flutter project.
 
 This project is for a Flutter client.
 
